@@ -2,9 +2,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.lang.Math;
 
 public class Panel00 extends JPanel {
-	Timer t = new Timer(1, new Listener()); //instantiate Timer
+	Timer t = new Timer(30, new Listener()); //instantiate Timer
 	int ctr = 0;
 	double G = 0.1; //Gravitational Constant
    //initialize variables
@@ -62,7 +63,7 @@ public class Panel00 extends JPanel {
 				ct++;
 				lines[plen + ct][0] = px + (int) (radius * Math.cos(i));
 				lines[plen + ct][1] = py + (int) (radius * Math.sin(i));
-				lines[plen + ct][2] = px + (int) (radius * Math.cos(i - 2 * Math.PI / sides));
+				lines[plen + ct][2] = px + (int) (radius * Math.cos(i - 2 *Math.PI / sides));
 				lines[plen + ct][3] = py + (int) (radius * Math.sin(i - 2 * Math.PI / sides));
 			}
 		}

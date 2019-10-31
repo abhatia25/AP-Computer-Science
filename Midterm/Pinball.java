@@ -1,10 +1,17 @@
-//Did not write this code, found it online, but I know what it does
+/* I found starter pinball code online, and attempted to modify it to make it better.
+Doesn't work perfectly, some errors occur if Timer speed is 1 (index out of range errors), 
+but if timer speed is 50 like now, no errors occur but the walls don't work perfectly for deflecting the ball.
+If I had more time, I would've integrated this more with my program as it's kinda just dropped there right now.
+I wanted to make the score for this add to the main score, but right not pinball has no effect on the outcome of the program
+Also the exit sequences don't work as intended.
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.lang.Math;
 
-public class Panel00 extends JPanel {
-	Timer t = new Timer(1, new Listener()); //instantiate Timer
+public class Pinball extends JPanel {
+	Timer t = new Timer(50/* change this value to change speed of game */, new Listener()); //instantiate Timer
 	int ctr = 0;
 	double G = 0.1; //Gravitational Constant
    //initialize variables
@@ -26,7 +33,7 @@ public class Panel00 extends JPanel {
 	double rtheta = 0;
 	double ltheta = 0;
 	
-	int preset[][] = {
+	int preset[][] = { //2D Array
 			{0, 400, 135, 450,1}, //right paddle
 			{135, 450, 270, 400,1}, //left paddle
 			{270, 0, 300, 20, 1}, //first bouncey thingy
@@ -35,15 +42,15 @@ public class Panel00 extends JPanel {
 			{0, -1, 0, 500, 1} //left wall
 	};
 
-	int[][] balls = {
+	int[][] balls = { //2D Array
 			{80, 80, 30, 50},
 			{230, 280, 20, 200},
 			{50, 200, 25, 100},
 			{200, 100, 10, 500}
 	};
-	int lines[][] = new int[100][5];
+	int lines[][] = new int[100][5]; //2D Array
 	
-	public Panel00(){
+	public Pinball(){
 		super();
 		t.start();
 		addKeyListener(new Key());
@@ -62,7 +69,7 @@ public class Panel00 extends JPanel {
 				ct++;
 				lines[plen + ct][0] = px + (int) (radius * Math.cos(i));
 				lines[plen + ct][1] = py + (int) (radius * Math.sin(i));
-				lines[plen + ct][2] = px + (int) (radius * Math.cos(i - 2 * Math.PI / sides));
+				lines[plen + ct][2] = px + (int) (radius * Math.cos(i - 2 *Math.PI / sides));
 				lines[plen + ct][3] = py + (int) (radius * Math.sin(i - 2 * Math.PI / sides));
 			}
 		}
@@ -161,7 +168,6 @@ public class Panel00 extends JPanel {
 				double futuredist = Math.sqrt(Math.pow(sx - (p2d[0] + Math.cos(ba) * tiny),2) + Math.pow(y - (p2d[1] + Math.sin(ba) * tiny),2));
 				
 				if(interdist <=  bmag + r && futuredist < interdist){ 
-					//System.out.println("Carl Sagan" + i); //this is a pun because he wrote a book called Contact
 					if(i > preset.length){
 						int ball = (int) Math.floor((i - preset.length)/sides);
 						//System.out.println(balls[ball][2]);
@@ -184,7 +190,7 @@ public class Panel00 extends JPanel {
 		
 	}
 	
-	private class Key extends KeyAdapter {
+	private class Key extends KeyAdapter { //Gets user input based on key presses
 		public void keyPressed(KeyEvent e){
 			if(e.getKeyCode() == KeyEvent.VK_DOWN){
 				setlock = true;
