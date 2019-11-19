@@ -253,8 +253,8 @@ public class CardGameGUI extends JFrame implements ActionListener {
 
  /**
   * Returns the image that corresponds to the input card.
-  * Image names have the format "[Rank][Suit].GIF" or "[Rank][Suit]S.GIF",
-  * for example "aceclubs.GIF" or "8heartsS.GIF". The "S" indicates that
+  * Image names have the format "[Rank][Suit].gif" or "[Rank][Suit]S.gif",
+  * for example "aceclubs.gif" or "8heartsS.gif". The "S" indicates that
   * the card is selected.
   *
   * @param c Card to get the image for
@@ -264,13 +264,13 @@ public class CardGameGUI extends JFrame implements ActionListener {
  private String imageFileName(Card c, boolean isSelected) {
   String str = "cards/";
   if (c == null) {
-   return "cards/back1.GIF";
+   return "cards/back1.gif";
   }
   str += c.rank() + c.suit();
   if (isSelected) {
    str += "S";
   }
-  str += ".GIF";
+  str += ".gif";
   return str;
  }
 
