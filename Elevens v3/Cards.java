@@ -17,7 +17,7 @@ public class Cards {
 		{"kingspades", "kinghearts", "kingdiamonds", "kingclubs"}
 	};
 	
-	private static String RandomCard() {
+	String RandomCard() {
 		Random rand = new Random();
 		
 		int r = rand.nextInt(13);
