@@ -16,12 +16,13 @@ public class ElevensBoard {
 		testframe.setJMenuBar(menubar);
 		testframe.pack();
 		testframe.setVisible(true);
+		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 	    if ("exit".equals(e.getActionCommand())) {
 	        testframe.setVisible(false);
 	    }
-	} 
+	}
 	
 }
