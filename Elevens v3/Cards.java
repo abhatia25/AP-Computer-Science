@@ -20,8 +20,8 @@ public class Cards {
 	private static String RandomCard() {
 		Random rand = new Random();
 		
-		int r = rand.nextInt(14);
-		int c = rand.nextInt(5);
+		int r = rand.nextInt(13);
+		int c = rand.nextInt(4);
 		
 		String card = cards[r][c];
 		
