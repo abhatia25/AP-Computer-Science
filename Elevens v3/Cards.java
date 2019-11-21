@@ -1,7 +1,10 @@
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Cards {
-	public static String[][] cards = {
+	public static String[][] cardsArr = {
 		{"acespades", "acehearts", "acediamonds", "aceclubs"},
 		{"2spades", "2hearts", "2diamonds", "2clubs"},
 		{"3spades", "3hearts", "3diamonds", "3clubs"},
@@ -23,8 +26,16 @@ public class Cards {
 		int r = rand.nextInt(13);
 		int c = rand.nextInt(4);
 		
-		String card = cards[r][c];
+		String card = cardsArr[r][c];
 		
 		return card;
+	}
+	
+	List<String> Shuffle() {
+		List<String> cardsList  = new ArrayList<>();
+		for (int i = 0; i < 11; i++) {
+			cardsList.add(RandomCard());
+		}
+		return cardsList;
 	}
 }
