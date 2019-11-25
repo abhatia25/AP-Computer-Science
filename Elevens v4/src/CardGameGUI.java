@@ -20,6 +20,8 @@ import java.util.ArrayList;
 /**
  * This class provides a GUI for solitaire games related to Elevens.
  */
+
+//stolen code for GUI
 public class CardGameGUI extends JFrame implements ActionListener {
 
 	/** Height of the game frame. */
