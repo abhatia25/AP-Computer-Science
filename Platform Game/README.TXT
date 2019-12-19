@@ -4,9 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+PROJECT TITLE: Platform Game
+PURPOSE OF PROJECT: Game Project in Greenfoot for AP Computer Science A
+VERSION or DATE: 12/18/2019
+HOW TO START THIS PROJECT: Open in Greenfoot and click 'run'
+AUTHORS: Aditya Bhatia
 USER INSTRUCTIONS:
